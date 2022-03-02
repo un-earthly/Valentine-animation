@@ -1,0 +1,75 @@
+body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(rgb(24, 0, 31), #3a1f3a);
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            color: #f20044;
+            overflow: hidden;
+        }
+
+        .heart {
+            height: 7rem;
+            width: 7rem;
+            background-color: #f20044;
+            transform: rotate(-45deg);
+            position: relative;
+            box-shadow: #f20044 0 10px 70px;
+            animation: beat 1s linear infinite;
+        }
+
+        .heart::before {
+            content: "";
+            height: 7rem;
+            width: 7rem;
+            top: -50%;
+            border-radius: 50rem;
+            background-color: #f20044;
+            position: absolute;
+            box-shadow: #f20044 0 10px 70px;
+        }
+
+        .heart::after {
+            content: "";
+            height: 7rem;
+            width: 7rem;
+            right: -50%;
+            border-radius: 50rem;
+            background-color: #f20044;
+            position: absolute;
+            box-shadow: #f20044 0 10px 70px;
+        }
+
+        @keyframes beat {
+            0% {
+                transform: rotate(-45deg) scale(.8);
+            }
+
+            50% {
+                transform: rotate(-45deg) scale(1);
+            }
+
+            75% {
+                transform: rotate(-45deg) scale(1.04);
+            }
+
+            100% {
+                transform: rotate(-45deg) scale(1.08);
+            }
+        }
+
+
+
+        .fa-heart {
+            position: absolute;
+            top: -20px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
